@@ -69,6 +69,13 @@ body { background: var(--paper); color: var(--ink); }
 .shopify-concept-link { padding: 9px 11px; font-size: 11px; }
 .home-page .trust-grid { grid-template-columns: 1fr; border-radius: var(--studio-radius); overflow: hidden; }
 .home-page .trust-grid article { min-height: 0; padding: 22px; background: var(--studio-surface); }
+.expectations-section { background: color-mix(in srgb, var(--ink) 2%, var(--paper)); }
+.expectations-grid { display: grid; grid-template-columns: 1fr; overflow: hidden; border: 1px solid var(--line); border-radius: var(--studio-radius); }
+.expectations-grid article { min-height: 170px; padding: 22px; border-bottom: 1px solid var(--line); background: var(--studio-surface); }
+.expectations-grid article:last-child { border-bottom: 0; }
+.expectations-grid span { color: var(--blue); font-size: 11px; font-weight: 700; }
+.expectations-grid h3 { margin: 32px 0 8px; font-size: 21px; letter-spacing: -.04em; }
+.expectations-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .home-page .about-grid { display: block; }
 .home-page .about-grid > .eyebrow { margin-bottom: 22px; }
 .home-page .about-copy { margin: 24px 0; font-size: 16px; line-height: 1.62; }
@@ -94,6 +101,34 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Portfolio and case studies */
 .portfolio-hero, .case-hero, .request-hero { padding: 118px 0 66px; }
+.pricing-hero, .contact-page-hero, .concept-detail-hero { padding: 118px 0 66px; background: radial-gradient(420px 280px at 86% 6%, color-mix(in srgb, var(--blue) 17%, transparent), transparent 72%); }
+.pricing-hero h1, .contact-page-hero h1, .concept-detail-hero h1 { margin: 0; font-size: clamp(43px, 11vw, 62px); letter-spacing: -.085em; line-height: .93; }
+.pricing-hero h1 span, .contact-page-hero h1 span { color: var(--muted); }
+.pricing-hero > .shell > p:last-child, .contact-page-hero > .request-shell > p:last-child, .concept-detail-hero > .shell > p:last-child { max-width: 540px; margin: 24px 0 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.pricing-section, .contact-page-section, .concept-detail-content { padding: 72px 0; }
+.pricing-grid { display: grid; gap: 15px; }
+.pricing-grid article { display: flex; min-height: 330px; flex-direction: column; border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: var(--studio-surface); box-shadow: var(--studio-shadow); }
+.pricing-grid article > p { margin: 0; color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.pricing-grid h2 { margin: 22px 0 10px; font-size: 28px; letter-spacing: -.06em; }
+.pricing-grid strong { font-size: 23px; letter-spacing: -.04em; }
+.pricing-grid article > span { margin-top: 18px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.pricing-grid ul { display: grid; gap: 8px; margin: 22px 0; padding: 0; color: var(--muted); font-size: 13px; list-style: none; }
+.pricing-grid a { margin-top: auto; border-bottom: 1px solid currentColor; padding-bottom: 4px; font-size: 13px; font-weight: 700; width: fit-content; }
+.contact-page-grid { display: grid; gap: 40px; }
+.contact-page-grid h2 { margin: 0; font-size: clamp(38px, 10vw, 52px); letter-spacing: -.08em; line-height: .94; }
+.contact-page-grid > div > p:last-of-type { max-width: 430px; color: var(--muted); line-height: 1.6; }
+.contact-page-grid > div > a { display: inline-block; margin-top: 20px; border-bottom: 1px solid currentColor; padding-bottom: 4px; font-weight: 700; }
+.contact-page-form { min-height: 0 !important; }
+.contact-page-form label { grid-column: auto; }
+.contact-page-form label:nth-child(6) { grid-column: 1 / -1; }
+.concept-detail-hero .detail-back { display: inline-block; margin-bottom: 56px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.concept-label { margin: -6px 0 16px; color: var(--muted); font-size: 13px; }
+.concept-cover { padding: 0 0 72px; }
+.concept-cover .shell > div { position: relative; aspect-ratio: 1.5 / 1; overflow: hidden; border-radius: var(--studio-radius); background: var(--studio-surface); box-shadow: var(--studio-shadow); }
+.concept-detail-grid { display: grid; gap: 42px; }
+.concept-detail-grid h2 { margin: 0; font-size: clamp(32px, 8vw, 48px); letter-spacing: -.07em; line-height: 1; }
+.concept-detail-grid > div > p:not(.eyebrow) { margin: 0 0 32px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.concept-detail-grid .technology-list { margin: 0 0 32px; }
 .portfolio-hero::after, .case-hero-glow, .request-hero::before { opacity: .32; filter: blur(22px); }
 .portfolio-hero h1, .case-hero h1, .request-hero h1 { font-size: clamp(43px, 11vw, 62px); letter-spacing: -.085em; line-height: .93; }
 .portfolio-hero > .shell > p:last-child, .case-lead, .request-hero > .request-shell > p:not(.eyebrow) { max-width: 510px; margin-top: 24px; font-size: 16px; line-height: 1.6; }
@@ -168,6 +203,9 @@ body { background: var(--paper); color: var(--ink); }
   .shopify-concept-meta { min-height: 126px; padding: 22px; }
   .home-page .trust-grid { grid-template-columns: repeat(3, 1fr); }
   .home-page .trust-grid article { min-height: 228px; }
+  .expectations-grid { grid-template-columns: repeat(4, 1fr); }
+  .expectations-grid article { min-height: 218px; border-right: 1px solid var(--line); border-bottom: 0; }
+  .expectations-grid article:last-child { border-right: 0; }
   .home-page .about-grid { display: grid; }
   .home-page .faq-grid { display: grid; }
   .home-page .faq-list { margin-top: 0; }
@@ -175,6 +213,15 @@ body { background: var(--paper); color: var(--ink); }
   .contact-form { padding: 26px; }
   .contact-form-loader, .contact-form-placeholder, .contact-form-loader .contact-form { min-height: 398px; }
   .portfolio-hero, .case-hero, .request-hero { padding: 148px 0 94px; }
+  .pricing-hero, .contact-page-hero, .concept-detail-hero { padding: 148px 0 94px; }
+  .pricing-hero h1, .contact-page-hero h1, .concept-detail-hero h1 { font-size: clamp(64px, 7.2vw, 98px); }
+  .pricing-section, .contact-page-section, .concept-detail-content { padding: 104px 0; }
+  .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pricing-grid article { min-height: 350px; padding: 24px; }
+  .contact-page-grid { grid-template-columns: .85fr 1.15fr; gap: 92px; align-items: start; }
+  .contact-page-form { grid-template-columns: 1fr 1fr; }
+  .concept-cover { padding-bottom: 104px; }
+  .concept-detail-grid { grid-template-columns: 1fr 1fr; gap: 90px; }
   .portfolio-hero h1, .case-hero h1, .request-hero h1 { font-size: clamp(64px, 7.2vw, 98px); }
   .portfolio-projects, .case-summary, .case-details, .case-result, .request-form-section { padding: 104px 0; }
   .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
