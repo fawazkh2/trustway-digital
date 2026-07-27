@@ -240,3 +240,37 @@ body { background: var(--paper); color: var(--ink); }
   .footer-row { display: flex; }
   .footer-row p { order: initial; }
 }
+
+/* Agency polish: one quieter rhythm and one interaction language. */
+:root { --studio-radius: 24px; --studio-radius-sm: 16px; --studio-shadow: 0 14px 42px rgba(24,24,38,.055); --studio-shadow-hover: 0 28px 64px rgba(24,24,38,.12); }
+::selection { background: color-mix(in srgb, var(--blue) 22%, transparent); }
+.button, .nav-cta, .project-card, .shopify-concept-card, .pricing-grid article, .expectations-grid article { transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms cubic-bezier(.2,.8,.2,1), border-color 220ms ease, background 220ms ease; }
+.button:hover, .nav-cta:hover { transform: translateY(-2px); }
+.project-card:hover, .pricing-grid article:hover { transform: translateY(-5px); box-shadow: var(--studio-shadow-hover); }
+.shopify-concept-card:hover { transform: translateY(-3px); }
+.project-image img, .shopify-concept-preview img { transition: transform 600ms cubic-bezier(.2,.8,.2,1); }
+.project-card:hover .project-image img, .shopify-concept-card:hover .shopify-concept-preview img { transform: scale(1.018); }
+.home-page .section { padding: 100px 0; }
+.home-page .section-intro > p:last-child, .home-page .trust-intro > p:last-child, .section-aside, .portfolio-hero > .shell > p:last-child, .pricing-hero > .shell > p:last-child { max-width: 450px; }
+.project-card, .pricing-grid article { overflow: hidden; }
+.project-card { border-radius: 22px; }
+.project-content { padding: 21px; }
+.project-copy { max-width: 43ch; line-height: 1.62; }
+.project-status { letter-spacing: .02em; }
+.pricing-grid article { border-radius: 22px; }
+.pricing-grid article:nth-child(2) { border-color: color-mix(in srgb, var(--blue) 36%, var(--line)); box-shadow: 0 16px 46px color-mix(in srgb, var(--blue) 10%, transparent); }
+.contact-page-form { border-radius: 22px; }
+.concept-cover .shell > div { border-radius: 24px; }
+.concept-detail-grid > div > p:not(.eyebrow) { max-width: 46ch; }
+.footer { border-top-color: color-mix(in srgb, var(--line) 82%, transparent); }
+@media (min-width: 761px) {
+  .home-page .section { padding: 144px 0; }
+  .home-page .hero-title { max-width: 960px; font-size: clamp(70px, 7.7vw, 108px); }
+  .portfolio-hero h1, .case-hero h1, .request-hero h1, .pricing-hero h1, .contact-page-hero h1, .concept-detail-hero h1 { font-size: clamp(70px, 7.6vw, 106px); }
+  .home-page .section h2, .home-page .trust-intro h2 { font-size: clamp(52px, 5.7vw, 78px); }
+  .shopify-concept-grid, .project-grid { gap: 22px; }
+  .project-content { padding: 24px; }
+  .pricing-grid { gap: 20px; }
+  .pricing-grid article { padding: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .button, .nav-cta, .project-card, .shopify-concept-card, .pricing-grid article, .expectations-grid article, .project-image img, .shopify-concept-preview img { transition: none; } }
