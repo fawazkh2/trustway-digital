@@ -1,0 +1,9 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#B9D3FF"/>
+  <rect x="248" y="83" width="704" height="594" rx="28" fill="#F8FBFF"/>
+  <rect x="248" y="83" width="704" height="106" rx="28" fill="#235DCB"/>
+  <rect x="248" y="159" width="704" height="30" fill="#235DCB"/>
+  <text x="299" y="143" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Appointments</text>
+  <g fill="#DCE9FF"><rect x="298" y="240" width="121" height="92" rx="12"/><rect x="442" y="240" width="121" height="92" rx="12"/><rect x="586" y="240" width="121" height="92" rx="12"/><rect x="730" y="240" width="121" height="92" rx="12"/></g>
+  <rect x="298" y="376" width="553" height="86" rx="12" fill="#EAF1FF"/><rect x="298" y="493" width="390" height="24" rx="12" fill="#315FAF"/><rect x="298" y="536" width="260" height="16" rx="8" fill="#9DB8EB"/>
+</svg>

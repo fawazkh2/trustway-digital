@@ -1,0 +1,10 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#E6E6E0"/>
+  <rect x="105" y="83" width="990" height="594" rx="12" fill="#1C1D20"/>
+  <rect x="142" y="120" width="916" height="36" rx="6" fill="#2A2C31"/>
+  <circle cx="167" cy="138" r="7" fill="#E6E6E0"/><circle cx="190" cy="138" r="7" fill="#E6E6E0" fill-opacity=".5"/>
+  <text x="170" y="278" fill="#F5F6F3" font-family="Arial, sans-serif" font-size="83" font-weight="700">A clearer way</text>
+  <text x="170" y="367" fill="#F5F6F3" font-family="Arial, sans-serif" font-size="83" font-weight="700">forward.</text>
+  <rect x="170" y="440" width="150" height="44" rx="22" fill="#C8D5FF"/>
+  <circle cx="876" cy="448" r="130" fill="#4B73DB"/><circle cx="876" cy="448" r="65" fill="#B8CBFF"/>
+</svg>
