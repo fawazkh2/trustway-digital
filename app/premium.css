@@ -17,17 +17,25 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Mobile navigation drawer */
 .home-page .nav-actions { gap: 8px; }
-.home-page .nav-cta { display: none; }
-.home-page .menu-button { position: relative; z-index: 32; display: grid; width: 38px; height: 38px; place-content: center; gap: 5px; border: 1px solid var(--line); border-radius: 11px; background: var(--studio-surface); }
-.home-page .menu-button span { width: 16px; margin: 0; transition: transform 180ms ease; }
-.home-page .nav-links { position: fixed; z-index: 31; top: 10px; right: 10px; left: 10px; display: grid; gap: 4px; padding: 70px 12px 14px; border: 1px solid var(--line); border-radius: 20px; background: var(--studio-surface); box-shadow: var(--studio-shadow-hover); transform: translateY(-14px) scale(.98); opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; }
-.home-page .nav-links.nav-open { display: grid; transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
-.home-page .nav-links a { width: 100%; padding: 13px 12px; border-radius: 10px; font-size: 15px; }
+.home-page .nav-cta, .home-page .desktop-nav { display: none; }
+.home-page .mobile-menu { position: relative; }
+.home-page .mobile-menu > summary { list-style: none; }
+.home-page .mobile-menu > summary::-webkit-details-marker { display: none; }
+.home-page .menu-button { position: relative; z-index: 32; display: grid; width: 38px; height: 38px; place-content: center; gap: 5px; border: 1px solid var(--line); border-radius: 11px; background: var(--studio-surface); cursor: pointer; }
+.home-page .menu-button span { display: block; width: 16px; height: 1px; margin: 0; background: var(--ink); transition: transform 180ms ease; }
+.home-page .mobile-menu[open] .menu-button span:first-child { transform: translateY(3px) rotate(45deg); }
+.home-page .mobile-menu[open] .menu-button span:last-child { transform: translateY(-3px) rotate(-45deg); }
+.home-page .mobile-nav { position: fixed; z-index: 31; top: 10px; right: 10px; left: 10px; display: grid; gap: 4px; padding: 70px 12px 14px; border: 1px solid var(--line); border-radius: 20px; background: var(--studio-surface); box-shadow: var(--studio-shadow-hover); }
+.home-page .mobile-nav a { width: 100%; padding: 13px 12px; border-radius: 10px; font-size: 15px; }
+.home-page .mobile-nav a:hover { background: color-mix(in srgb, var(--blue) 8%, transparent); }
+.home-page .mobile-nav-cta { margin-top: 6px; background: var(--ink); color: var(--paper); font-weight: 700; }
 .home-page .nav-links .nav-active { background: color-mix(in srgb, var(--blue) 10%, transparent); }
-.nav-backdrop { position: fixed; z-index: 29; inset: 0; border: 0; background: rgba(17,17,25,.24); backdrop-filter: blur(3px); }
+.home-page .mobile-menu::before { position: fixed; z-index: 29; inset: 0; background: rgba(17,17,25,.24); content: ""; backdrop-filter: blur(3px); }
+.home-page .mobile-menu:not([open])::before { display: none; }
 
 /* Home */
 .home-page .hero { min-height: 650px; padding: 132px 0 66px; background: radial-gradient(360px 260px at 88% 10%, color-mix(in srgb, var(--blue) 15%, transparent), transparent 72%), var(--paper); }
+.home-page .fade-up { animation: none; }
 .home-page .hero-grid { display: none; }
 .home-page .hero-glow-one { top: 3%; right: -42%; width: 330px; opacity: .25; filter: blur(35px); }
 .home-page .hero-glow-two { display: none; }
@@ -67,12 +75,21 @@ body { background: var(--paper); color: var(--ink); }
 .home-page .founder-note { margin-top: 40px; }
 .home-page .faq-grid { display: block; }
 .home-page .faq-list { margin-top: 38px; }
-.home-page .faq-item button { padding: 21px 0; font-size: 16px; line-height: 1.35; }
+.home-page .faq-item { border-bottom-color: var(--line); }
+.home-page .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; cursor: pointer; font-size: 16px; font-weight: 650; line-height: 1.35; list-style: none; }
+.home-page .faq-item summary::-webkit-details-marker { display: none; }
+.home-page .faq-item summary i { width: 18px; height: 18px; flex: 0 0 auto; position: relative; }
+.home-page .faq-item summary i::before, .home-page .faq-item summary i::after { position: absolute; top: 8px; left: 1px; width: 16px; height: 1.5px; border-radius: 1px; background: var(--blue); content: ""; transition: transform 180ms ease; }
+.home-page .faq-item summary i::after { transform: rotate(90deg); }
+.home-page .faq-item[open] summary i::after { transform: rotate(0); }
+.home-page .faq-item > p { max-width: 570px; margin: 0; padding: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .home-page .contact-section { padding: 82px 0; background: linear-gradient(135deg, #635bff, #5149e7); }
 .home-page .contact-grid { display: block; }
 .home-page .contact-section h2 { font-size: clamp(38px, 10vw, 50px); }
 .home-page .contact-options { margin: 28px 0 42px; }
 .contact-form { gap: 16px; border-radius: 18px; padding: 18px; box-shadow: 0 18px 45px rgba(17,14,76,.16); }
+.contact-form-loader, .contact-form-placeholder { min-height: 375px; }
+.contact-form-loader .contact-form { min-height: 375px; }
 .contact-submit { min-height: 48px; border-radius: 9px; }
 
 /* Portfolio and case studies */
@@ -123,10 +140,10 @@ body { background: var(--paper); color: var(--ink); }
 @media (min-width: 761px) {
   .shell, .case-shell, .request-shell { width: min(100% - 64px, 1180px); }
   .home-page .nav-wrap { height: 76px; }
-  .home-page .nav-cta { display: inline-flex; }
-  .home-page .menu-button, .nav-backdrop { display: none; }
-  .home-page .nav-links { position: static; display: flex; gap: 2px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; transform: none; opacity: 1; pointer-events: auto; }
-  .home-page .nav-links a { width: auto; padding: 8px 11px; font-size: 13px; }
+  .home-page .nav-cta, .home-page .desktop-nav { display: inline-flex; }
+  .home-page .mobile-menu { display: none; }
+  .home-page .desktop-nav { position: static; gap: 2px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .home-page .desktop-nav a { width: auto; padding: 8px 11px; font-size: 13px; }
   .home-page .hero { min-height: 720px; padding: 154px 0 88px; }
   .home-page .hero-grid { display: block; opacity: .035; }
   .home-page .hero-glow-one { top: 9%; right: -10%; width: 470px; opacity: .34; }
@@ -156,6 +173,7 @@ body { background: var(--paper); color: var(--ink); }
   .home-page .faq-list { margin-top: 0; }
   .home-page .contact-grid { display: grid; }
   .contact-form { padding: 26px; }
+  .contact-form-loader, .contact-form-placeholder, .contact-form-loader .contact-form { min-height: 398px; }
   .portfolio-hero, .case-hero, .request-hero { padding: 148px 0 94px; }
   .portfolio-hero h1, .case-hero h1, .request-hero h1 { font-size: clamp(64px, 7.2vw, 98px); }
   .portfolio-projects, .case-summary, .case-details, .case-result, .request-form-section { padding: 104px 0; }
