@@ -1,6 +1,6 @@
 <svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1200" height="900" fill="#E9E5DF"/><rect x="58" y="46" width="1084" height="808" rx="16" fill="#F8F7F4"/>
-<text x="104" y="112" fill="#252422" font-family="Arial" font-size="25" font-weight="700" letter-spacing="5">ATELIER NOIR</text><text x="925" y="112" fill="#6D6962" font-family="Arial" font-size="16">Shop&nbsp;&nbsp; Journal&nbsp;&nbsp; About</text>
+<text x="104" y="112" fill="#252422" font-family="Arial" font-size="25" font-weight="700" letter-spacing="5">ATELIER NOIR</text><text x="925" y="112" fill="#6D6962" font-family="Arial" font-size="16">Shop&#160;&#160; Journal&#160;&#160; About</text>
 <rect x="104" y="158" width="992" height="572" rx="8" fill="#C9C3BB"/><path d="M666 248C742 208 831 219 884 285L950 670H495L543 357C555 297 604 271 666 248Z" fill="#282827"/><path d="M603 344C657 386 754 386 814 342" stroke="#A69D93" stroke-width="6"/><text x="142" y="650" fill="#F8F7F4" font-family="Arial" font-size="78" font-weight="700">Fall / Winter</text><text x="146" y="691" fill="#F8F7F4" font-family="Arial" font-size="21">Designed for the everyday ritual.</text>
 <rect x="104" y="762" width="208" height="48" rx="24" fill="#252422"/><text x="144" y="793" fill="white" font-family="Arial" font-size="16" font-weight="700">Explore collection</text>
 </svg>
