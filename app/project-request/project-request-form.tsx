@@ -64,7 +64,7 @@ export default function ProjectRequestForm() {
           {error && <p className="request-error" role="alert">{error}</p>}<button type="submit" className="request-submit" disabled={submitting}>{submitting ? "Wird gesendet..." : "Projekt anfragen"} <ArrowUpRight /></button><p className="required-note"><em>*</em> Pflichtfelder</p>
         </form>
       </div></section>
-      <footer className="footer"><div className="request-shell footer-row"><Link href="/" className="brand"><span className="brand-mark">T</span><span>trustway</span></Link><p>© {new Date().getFullYear()} Trustway Digital. Alle Rechte vorbehalten.</p><span>Built by Fawaz</span></div></footer>
+      <footer className="footer"><div className="request-shell footer-row"><Link href="/" className="brand"><span className="brand-mark">T</span><span>trustway</span></Link><p>© {new Date().getFullYear()} Trustway Digital. Alle Rechte vorbehalten.</p><a href="mailto:fawazkhairi234@gmail.com">fawazkhairi234@gmail.com</a><span>Built by Fawaz</span></div></footer>
     </main>
   );
 }

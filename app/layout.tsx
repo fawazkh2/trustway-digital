@@ -47,7 +47,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><Script id="theme-preference" strategy="beforeInteractive">{`try { const saved = localStorage.getItem('trustway-theme'); const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; document.documentElement.classList.toggle('dark', dark); } catch {}`}</Script><Script id="organization-schema" type="application/ld+json" strategy="beforeInteractive">{JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "Trustway Digital", url: "https://trustway.digital", email: "hello@trustway.digital", areaServed: "DE", description: "Premium Websites, Shopify Stores und KI-Automationen für ambitionierte Unternehmen." })}</Script>{children}</body>
+      <body className="min-h-full flex flex-col"><Script id="theme-preference" strategy="beforeInteractive">{`try { const saved = localStorage.getItem('trustway-theme'); const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; document.documentElement.classList.toggle('dark', dark); } catch {}`}</Script><Script id="organization-schema" type="application/ld+json" strategy="beforeInteractive">{JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "Trustway Digital", url: "https://trustway.digital", email: "fawazkhairi234@gmail.com", areaServed: "DE", description: "Premium Websites, Shopify Stores und KI-Automationen für ambitionierte Unternehmen." })}</Script>{children}</body>
     </html>
   );
 }
